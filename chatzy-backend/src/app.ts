@@ -1,14 +1,19 @@
 import express, { Express } from 'express';
-
 import { ChatzyServer } from './setupServer';
-
-// import tester from '@feature/tester/'
+import databaseConnection from './setupDatabase';
+import { config } from './config';
 
 class Application {
     public initialize(): void {
+        this.loadConfig();
+        databaseConnection();
         const app: Express = express();
         const server: ChatzyServer = new ChatzyServer(app);
         server.start();
+    }
+
+    private loadConfig(): void {
+        config.validateConfig();
     }
 }
 

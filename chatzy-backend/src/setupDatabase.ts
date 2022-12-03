@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
+import { config } from './config';
 
 export default () => {
     const connect = () => {
-        mongoose.connect('mongodb://localhost:27017/chatzyapp-backend')
+        mongoose.connect(`${config.DATABASE_URL}`)
             .then(() => {
                 console.log('Succesfully connected to database.');
             })
@@ -12,4 +13,6 @@ export default () => {
             });
     };
     connect();
+
+    mongoose.connection.on('disconnect', connect);
 };

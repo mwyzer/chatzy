@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "ttypescript": "^1.5.13",
+    "typescript-transform-paths": "^3.4.4"
+  }
+}

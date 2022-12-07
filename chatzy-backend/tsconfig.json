@@ -7,7 +7,7 @@
     "strict": true,
     "noImplicitAny": true,
     "noUnusedLocals": false,
-    "moduleResolution": "classic",
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "sourceMap": true,
     "experimentalDecorators": true,
